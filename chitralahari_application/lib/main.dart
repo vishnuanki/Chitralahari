@@ -1,5 +1,6 @@
 //import 'package:chitralahari_application/Screens/SignInPage.dart';
-import 'package:chitralahari_application/Screens/sign_in_page.dart';
+import 'package:chitralahari_application/Screens/LandingPage.dart';
+import 'package:chitralahari_application/Services/Auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -27,7 +28,9 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: SignInPage(),
+      home: LandingPage(
+        auth: Auth(),
+      ),
     );
   }
 }

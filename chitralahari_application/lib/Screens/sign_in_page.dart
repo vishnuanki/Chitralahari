@@ -1,18 +1,16 @@
+import 'package:chitralahari_application/Services/Auth.dart';
 import 'package:chitralahari_application/Widgets/sign_in_button.dart';
 import 'package:chitralahari_application/Widgets/social_sign_in_button.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 class SignInPage extends StatelessWidget {
-  void _signInAnonymously() async {
-    try {
-      await FirebaseAuth.instance.signInAnonymously();
-    } catch (e) {
-      print(e.toString());
-    }
+  SignInPage({@required this.auth});
+  final AuthBase auth;
+  Future<void> _signInAnonymously() async {
+    await auth.signInAnonymously();
   }
 
-   @override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: _buildContent(context),
@@ -49,7 +47,7 @@ class SignInPage extends StatelessWidget {
             text: 'Sign in with Facebook',
             textColor: Colors.white,
             color: Color(0xFF334D92),
-            onPressed: () {}, 
+            onPressed: () {},
           ),
           SizedBox(height: 8.0),
           SignInButton(
