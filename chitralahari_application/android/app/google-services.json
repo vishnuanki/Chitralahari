@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "51811393241",
+    "firebase_url": "https://chitralahariapplication.firebaseio.com",
+    "project_id": "chitralahariapplication",
+    "storage_bucket": "chitralahariapplication.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:51811393241:android:d4e4f8fdc70766012328c8",
+        "android_client_info": {
+          "package_name": "com.ankiom.chitralahari_application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "51811393241-g76451mdc84jebs9er91moksvee7vpqb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ankiom.chitralahari_application",
+            "certificate_hash": "4fa11852ee55af7f5fda819d00633776b691b8d3"
+          }
+        },
+        {
+          "client_id": "51811393241-8l33h8kcbej5fm7aq296l2tvlhdtll6k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYxJOYYL6qgUIHR11tf8e8XO-nODMrmL4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "51811393241-8l33h8kcbej5fm7aq296l2tvlhdtll6k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
