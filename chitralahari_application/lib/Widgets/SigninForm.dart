@@ -1,14 +1,17 @@
-import 'package:chitralahari_application/Services/Auth.dart';
+// import 'dart:io';
+
+import 'package:chitralahari_application/Widgets/PlatformExceptionAlertDialog.dart';
 import 'package:chitralahari_application/Widgets/SubmitButton.dart';
 import 'package:chitralahari_application/Widgets/validators.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
+import 'package:chitralahari_application/Services/Auth.dart';
 
 enum EmailSigninType { signin, register }
 
 class SigninForm extends StatefulWidget with EmailAndPasswordValidators {
-  SigninForm({@required this.auth});
-  final AuthBase auth;
   @override
   _SigninFormState createState() => _SigninFormState();
 }
@@ -29,19 +32,29 @@ class _SigninFormState extends State<SigninForm> {
       _isLoading = true;
     });
     try {
+      final auth = Provider.of<AuthBase>(context);
       if (_formType == EmailSigninType.signin) {
-        await widget.auth.signInWithEmailAndPassword(_email, _password);
+        await auth.signInWithEmailAndPassword(_email, _password);
       } else {
-        await widget.auth.createInWithEmailAndPassword(_email, _password);
+        await auth.createInWithEmailAndPassword(_email, _password);
       }
       Navigator.of(context).pop();
-    } catch (e) {
-      print(e.toString());
+    } on PlatformException catch (e) {
+      PlatformExceptionAlertDialog(
+        exception: e,
+        title: "Sign in Failed.",
+      ).show(context);
     } finally {
       setState(() {
         _isLoading = false;
       });
     }
+  }
+
+  void diapose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
   }
 
   void _toggleForm() {
