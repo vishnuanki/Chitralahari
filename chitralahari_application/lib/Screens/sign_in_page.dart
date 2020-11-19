@@ -86,7 +86,7 @@ class _SignInPageState extends State<SignInPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: _buildContent(context),
-      backgroundColor: Colors.grey[200],
+      backgroundColor: Colors.black12,
     );
   }
 
@@ -95,7 +95,7 @@ class _SignInPageState extends State<SignInPage> {
       padding: EdgeInsets.all(16.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.end,
         children: [
           SizedBox(height: 50, child: _buildHeader()),
           SizedBox(height: 48.0),

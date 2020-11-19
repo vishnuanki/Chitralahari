@@ -46,7 +46,7 @@ class PlatformAlertDialogs extends PlatformChecks {
   }
 
   List<Widget> _buildActions(BuildContext context) {
-    final actions = [];
+    final actions = <Widget>[];
     if (cancelActionText != null) {
       actions.add(
         PlatformAlertDialogAction(

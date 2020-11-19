@@ -33,6 +33,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Chitralahari..."),
+        centerTitle: true,
         actions: [
           FlatButton(
               onPressed: () => _confirmSignOut(context),
